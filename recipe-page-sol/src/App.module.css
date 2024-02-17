@@ -1,0 +1,130 @@
+.app {
+  width: 100%;
+  display: flex;
+  padding: 5% 0 5% 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  width: 50%;
+  min-width: 400px;
+  max-width: 800px;
+  background: var(--White);
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px var(--Light-grey);
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.app h1 {
+  font-family: "Young Serif";
+}
+
+.app h2 {
+  font-family: "Young Serif";
+  color: var(--Nutmeg);
+}
+
+.subtitle {
+  color: var(--Nutmeg);
+  font-family: "Young Serif";
+}
+
+.preparationTimeContainer {
+  background-color: var(--Rose-white);
+  padding: 4%;
+  border-radius: 12px;
+}
+
+.preparationTimeContainer h2 {
+  color: var(--Dark-raspberry);
+  padding-bottom: 1rem;
+  font-family: "Outfit";
+}
+
+ol,
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  padding-left: 0.5rem;
+}
+
+ul li::marker {
+  color: var(--Nutmeg);
+}
+
+hr {
+  border-color: rgba(128, 128, 128, 0.2);
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+  padding-left: 0.5rem;
+}
+
+ol li {
+  position: relative;
+  counter-increment: my-counter;
+  padding-left: 1.5rem;
+}
+
+ol li::before {
+  content: counter(my-counter);
+  color: var(--Nutmeg);
+  position: absolute;
+  left: 0;
+}
+
+.nutritionItem {
+  padding: 0 1.5rem 0 1.5rem;
+  display: flex;
+}
+
+.nutritionItem span {
+  flex: 1;
+}
+
+.nutritionItem > :nth-child(2) {
+  color: var(--Nutmeg);
+}
+
+.smallScreenOnly {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .app {
+    padding: 0;
+    font-size: 32px;
+  }
+  .card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 200px;
+    max-width: none;
+    border-radius: 0;
+    padding: 7%;
+  }
+
+  .largeScreenOnly {
+    display: none;
+  }
+  .smallScreenOnly {
+    display: block;
+  }
+}
